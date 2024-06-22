@@ -4,7 +4,7 @@
 #include <vector>
 #include "nodes.h"
 
-class AVLTree{ // OnlineGDB Class Example
+class AVLTree{
     private:
          // Initialize the root to nullptr
         Node* root = nullptr;
@@ -36,6 +36,6 @@ class AVLTree{ // OnlineGDB Class Example
         void searchName(std::string targetName);
         void removeID(std::string studentID);
         void removeInorder(int number);
-        // Create a destructor
+        // Destructor
         ~AVLTree();
 };
