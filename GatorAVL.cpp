@@ -4,7 +4,6 @@
 #include <vector>
 #include <regex>
 
-// https://www.onlinegdb.com/vWp_hhaQlC
 // Constructor for the AVL Tree with a nullptr root
 AVLTree::AVLTree(){
     this->root = nullptr;
@@ -31,7 +30,6 @@ bool AVLTree::idChecker(std::string id){
     return true;
 }
 
-// https://www.onlinegdb.com/vWp_hhaQlC
 // Helper inorder function to traverse the AVL Tree
 void AVLTree::helperInorder(Node* helpRoot, std::vector<std::string>& names) {
     if(helpRoot == nullptr)
@@ -71,7 +69,6 @@ void AVLTree::helperPostorder(Node* helpRoot, std::vector<std::string>& names) {
     }
 }
 
-// Module 5 Lecture 2 Slide 10
 // Rotate right method to balance the AVL Tree
 Node* AVLTree::rotateRight(Node* helpRoot){
     Node* newParent = helpRoot->left;
@@ -84,7 +81,6 @@ Node* AVLTree::rotateRight(Node* helpRoot){
     return newParent;
 }
 
-// Module 5 Lecture 2 Slide 10
 // Rotate left method to balance the AVL Tree
 Node* AVLTree::rotateLeft(Node* helpRoot){
     Node* newParent = helpRoot->right;
@@ -105,7 +101,6 @@ int AVLTree::getHeight(Node* helpRoot){
         return helpRoot->height;
 }
 
-// https://www.onlinegdb.com/vWp_hhaQlC
 Node* AVLTree::helperInsert(Node* helpRoot, std::string studentID, std::string name){
     // If the root is nullptr, create a new node
     if (helpRoot == nullptr){
@@ -125,7 +120,6 @@ Node* AVLTree::helperInsert(Node* helpRoot, std::string studentID, std::string n
     // Adjust the height of the nodes
     helpRoot->height = 1 + std::max(getHeight(helpRoot->left), getHeight(helpRoot->right));
 
-    // Module 5 Lecture 4 Slide 3
     // If the tree is right heavy
     if (getHeight(helpRoot->left) - getHeight(helpRoot->right) < -1){
         // If the tree's right subtree is left heavy
@@ -138,7 +132,6 @@ Node* AVLTree::helperInsert(Node* helpRoot, std::string studentID, std::string n
         }
     }
 
-    // Module 5 Lecture 4 Slide 3
     // If the tree is left heavy
     else if (getHeight(helpRoot->left) - getHeight(helpRoot->right) > 1){
         // If the tree's left subtree is right heavy
@@ -168,7 +161,6 @@ void AVLTree::helperSearchName(Node* helpRoot, std::string targetName, std::vect
     }
 }
 
-// Module 5 Slideshow 4 Slide 2
 // Method to remove the node with the student ID
 Node* AVLTree::helperRemoveID(Node* helpRoot, std::string studentID){
     if (helpRoot == nullptr)
@@ -295,7 +287,6 @@ void AVLTree::helperDestructor(Node* helpRoot){
     }
 }
 
-// https://www.onlinegdb.com/vWp_hhaQlC
 // Method to print the AVL Tree in Inorder Traversal
 std::vector<std::string> AVLTree::inorder(){
     std::vector<std::string> names;
